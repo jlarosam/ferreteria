@@ -5,70 +5,66 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ include file="header.jsp" %> <!-- Incluir el header aquí -->
 <!DOCTYPE html>
 <html>
     <head>
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Importar Material Icons para los íconos -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Importar Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Importar Bootstrap JS Bundle con Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Importar Font Awesome -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+        <link type="text/css" rel="stylesheet" href="css/styles.css"
               media="screen,projection"/>
+        <link rel="stylesheet" href="css/header.css">
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>La Tuerca</title>
+        <title>Estado Vehiculo </title>
     </head>
     <body>          
-        <nav class="teal darken-3" role="navigation">
-            <div class="nav-wrapper container">
-                <a id="logo-container" href="index.jsp" class="brand-logo">La Tuerca</a>    
+     <div class="container-menu d-flex align-items-center justify-content-center vh-100">
+        <div class="section bg-white rounded shadow p-5">
+            <div class="text-center mb-5">
+                <h4 class="Title">Estado Vehículo</h4> 
             </div>
-        </nav>   
-        <div class="container">
-            <div class="section">
-                <div class="row">
-                    <div class="col s12 center "> 
-                        <h4>Estado Vehiculo</h4> 
-                    </div>
-                    <div class="col s6">
-                        <br>
-                        <h5>Busque su vehiculo</h5>
-                        <form action="ControladorEstadoVehi" method="Post">
-                            <div class="input-field col s8">
-                                <i class="material-icons prefix">directions_car</i>
-                                <input id="icon_prefix"  type="text" maxlength="6" name="patente" >
-                                <label for="icon_prefix">Ingrese pantente del vehiculo</label>
-                            </div>                                
-                            <div class="input-field col s8">  
-                                <input class="btn-large waves-effect waves-light cyan" type="submit" name="opcion" value="Buscar"><i class="material-icons blue-grey"></i>
-                            </div> 
-                        </form>
-                        <div class="input-field col s8">
-                            <a href="index.jsp" class="waves-effect waves-light red btn"><i class="material-icons left">arrow_back</i>Atrás</a>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 col-sm-12">
+                    <h5 class="mb-4">Busque su vehículo</h5>
+                    <form action="ControladorEstadoVehi" method="POST">
+                        <!-- Campo de entrada -->
+                        <div class="input-group mb-4">
+                            <span class="input-group-text">
+                                <i class="material-icons">directions_car</i>
+                            </span>
+                            <input type="text" class="form-control" maxlength="6" name="patente" placeholder="Ingrese patente del vehículo" required>
                         </div>
+                        <!-- Botón de búsqueda -->
+                        <div class="d-grid mb-4">
+                            <button type="submit" name="opcion" value="Buscar" class="button">
+                                <span class="button_top">Buscar</span>
+                            </button>
+                        </div>
+                    </form>
+                    <!-- Botón de retroceso -->
+                    <div class="d-grid">
+                        <a href="index.jsp" class="back-button">
+                            <i class="material-icons left">arrow_back</i>Atrás
+                        </a>
                     </div>
-
                 </div>
             </div>
-        </div>         
-
-
-        <footer class="page-footer teal grey darken-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Acerca de</h5>
-                        <p class="grey-text text-lighten-4"></p>
-                    </div>              
-                </div>
-            </div>
-            <div class="footer-copyright">
-                     <div class="container">
-                        © 2024 Desarrollo Web Integrado UTP
-                        <a class="grey-text text-lighten-4 right" href="" target="_blank"> Integrantes </a>           
-                    </div>
-            </div>
-        </footer>
+        </div>
+    </div>
+            
+        <%@ include file="footer.jsp" %> <!-- Incluir el footer aquí -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>        
     </body>

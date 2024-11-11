@@ -3,79 +3,97 @@
 
     Author     : maiv
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">       
-        <!--Import Google Icon Font-->
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"
-              media="screen,projection"/>
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" type="image/png" href="/images/favicon.ico" />
-        <title>La Tuerca</title>
-    </head>
-    <body>
-        <nav class="teal darken-3" role="navigation">
-            <div class="nav-wrapper container">
-                <a id="logo-container" href="index.jsp" class="brand-logo">La Tuerca</a>                
-                <ul class="right hide-on-med-and-down"> 
-                    <form action="ControladorLogin" method="POST">    
-                        <li class="input-field col s5">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="icon_prefix" value="" type="text" name="usuario" required="required" >
-                            <label for="icon_prefix">Usuario</label>
-                        </li>
-                        <li class="input-field col s4">                                                       
-                            <i class="material-icons prefix">vpn_key</i>
-                            <input id="icon_prefix" value=""  type="password" name="clave" required="required">
-                            <label for="icon_prefix">Contraseña</label>
-                        </li>  
-                        <li class="input-field col s2">   
-                             <button class="btn waves-effect waves-light btn-large" type="submit" name="opcion" value="Ingresar">Ingresar<i class="material-icons right"></i></button>
-                        </li>  
-                    </form> 
-                </ul>              
-            </div>
-        </nav> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>La Tuerca - Inicio </title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <!-- Importar Google Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Importar Material Icons para los íconos -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Importar Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Importar Bootstrap JS Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Importar Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <header class="header-container">
+    <nav class="header-navbar">
+        <!-- Logo y título -->
+        <div class="header-logo">
+            <a href="index.jsp">
+                <img src="images/logo_blanco.png" alt="La Tuerca">
+                <span class="header-logo-text">LA TUERCA</span>
+            </a>
+        </div>
 
-        <div id="index-banner" class="parallax-container">
-            <div class="section no-pad-bot">
-                <div class="container">
-                    <br><br>
-                    <h1 class="header center teal-text text-lighten-2">La Tuerca</h1>
-                    <div class="row center">
-                        <h5 class="header col s12 light">Revisa aqui el estado de su auto</h5>
-                    </div>
-                    <div class="row center">  
-                        <a href="estadoVehiculo.jsp" id="download-button" class="btn-large waves-effect waves-light teal lighten-1"><i class="material-icons prefix">drive_eta</i>Estado de su vehiculo</a>
-                    </div>
-                    <br><br>
+        <!-- Menú de navegación -->
+        <ul class="header-nav-links">
+            <li><a href="formularioCliente.jsp">Regístrate</a></li>
+            <li><a href="formularioMoto.jsp">Atención Motos</a></li>
+            <li><a href="formularioAuto.jsp">Atención Autos</a></li>
+        </ul>
+
+        <!-- Formulario de inicio de sesión alineado a la derecha -->
+        <form action="ControladorLogin" method="POST" class="login-form">
+            <i class="material-icons icon-prefix">account_circle</i>
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <i class="material-icons icon-prefix">vpn_key</i>
+            <input type="password" name="clave" placeholder="Contraseña" required>
+            <button class="btn-light" type="submit" name="opcion" value="Ingresar">Ingresar</button>
+        </form>
+    </nav>
+</header>
+</head>
+
+<body class="body">
+
+<!-- Contenedor principal -->
+<div class="container d-flex align-items-center justify-content-between">
+    <!-- Columna izquierda: Contenido principal -->
+    <div class="left-column">
+        <h1 class="Title">La Tuerca</h1>
+        <p>Revisa aquí el estado de su auto</p>
+        <a href="estadoVehiculo.jsp" class="button">
+            <span class="button_top">Estado de su vehículo</span>
+        </a>
+    </div>
+
+    <!-- Columna derecha: Carrusel -->
+    <div class="right-column">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Primera imagen -->
+                <div class="carousel-item active">
+                    <img src="images/taller1.jpeg" class="d-block w-100" alt="Imagen 1">
                 </div>
-            </div>          
-        </div>              
-        <footer class="page-footer grey darken-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Acerca de</h5>
-                        <p class="grey-text text-lighten-4"></p>
-                    </div>              
+                <!-- Segunda imagen -->
+                <div class="carousel-item">
+                    <img src="images/taller2.jpeg" class="d-block w-100" alt="Imagen 2">
+                </div>
+                <!-- Tercera imagen -->
+                <div class="carousel-item">
+                    <img src="images/camiones.jpeg" class="d-block w-100" alt="Imagen 3">
                 </div>
             </div>
-            <div class="footer-copyright">
-                     <div class="container">
-                        © 2024 Desarrollo Web Integrado UTP
-                        <a class="grey-text text-lighten-4 right" href="" target="_blank"> Integrantes </a>           
-                    </div>
-            </div>
-        </footer>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>        
-    </body>
+            <!-- Botones de navegación del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+</div>
+    <%@ include file="footer.jsp" %>
+
+</body>
 </html>
